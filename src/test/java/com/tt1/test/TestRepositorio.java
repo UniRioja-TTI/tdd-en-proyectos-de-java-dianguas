@@ -8,7 +8,11 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.tt1.test.mock.ToDoMock;
+
 class TestRepositorio {
+	
+	private Repositorio repo=new Repositorio();
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -28,22 +32,22 @@ class TestRepositorio {
 
 	@Test
 	void testBuscarServicio() {
-		fail("Not yet implemented");
+		assertEquals(repo.buscarServicio("AYUDA"),ToDoMock.ejemplo.getNombre());
 	}
 
 	@Test
 	void testCompletadoServicio() {
-		fail("Not yet implemented");
+		assertTrue(repo.completadoServicio(ToDoMock.ejemplo));
 	}
 
 	@Test
 	void testAgnadirServicio() {
-		fail("Not yet implemented");
+		assertTrue(repo.agnadirServicio(ToDoMock.ejemplo));
 	}
 
 	@Test
 	void testAgnadirCorreo() {
-		fail("Not yet implemented");
+		assertTrue(repo.agnadirCorreo("ejemplo@unirioja.es"));
 	}
 
 }

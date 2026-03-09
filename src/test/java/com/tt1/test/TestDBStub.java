@@ -52,5 +52,21 @@ class TestDBStub {
 		bd.DELETE(ToDoMock.ejemplo);
 		assertNotEquals(ToDoMock.ejemplo,bd.READ("AYUDA"));
 	}
+	
+	@Test
+	void testagnadirCorreo() {
+		assertTrue(bd.agnadirCorreo("ejemplo@unirioja.es"));
+	}
+	
+	@Test
+	void testgetCorreo() {
+		assertEquals(bd.getCorreo("ejemplo@unirioja.es"),"ejemplo@unirioja.es");
+	}
+	
+	@Test
+	void testupdateCorreo() {
+		bd.updateCorreo("ejemplo@unirioja.es", "prueba@unirioja.es");
+		assertEquals(bd.getCorreo("prueba@unirioja.es"),"prueba@unirioja.es");
+	}
 
 }
